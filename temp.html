@@ -1,0 +1,20 @@
+<!-- index.htm -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            if (window.netlifyIdentity) {
+              window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                  });
+                }
+              });
+            }
+          </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

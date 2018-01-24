@@ -1,0 +1,29 @@
+[
+    {
+        "id": "1",
+        "name": "Nick Lewis",
+        "position": "Director",
+        "avatar": "../assets/images/avatars/filler.jpg",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.",
+        "email": "michael@mycompany.com",
+        "twitter": "https://twitter.com"
+    },
+    {
+        "id": "2",
+        "name": "Tina Lewis",
+        "position": "Director",
+        "avatar": "../assets/images/avatars/filler.jpg",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.",
+        "email": "james@mycompany.com",
+        "twitter": "https://twitter.com"
+    },
+    {
+        "id": "3",
+        "name": "Dan Davis",
+        "position": "Apprentice",
+        "avatar": "../assets/images/avatars/filler.jpg",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.",
+        "email": "barney@mycompany.com",
+        "twitter": "https://twitter.com"
+    }
+]
