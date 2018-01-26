@@ -23,37 +23,37 @@ const Container = styled.main`
 
 export default ({ children, data, location }) => {
   baseStyles();
-  const title = `${data.site.siteMetadata.title} | HeadForCode | We Teach. We Consult. We Solve.`;
+  const title = ` | HeadForCode | We Teach. We Consult. We Solve.`;
   const { pathname } = location;
 
   return (
     <ThemeProvider theme={theme}>
-    <Wrapper>
-      <Helmet
-        title={title}
-        meta={[
-          {
-            name: 'description',
-            content: title,
-          },
-          ...meta,
-        ]}
-        link={link}
-        script={script}
-      >
-        <html lang="en" dir="ltr" />
-      </Helmet>
-      <Header title={data.site.siteMetadata.title} pathname={pathname} />
-      <Container id="content" role="main">
-        {children()}
-      </Container>
-      <Footer />
-      {/* <BottomBarContainer /> */}
-      <link id="snipcart-theme" type="text/css" href="https://cdn.snipcart.com/themes/base/snipcart.css" rel="stylesheet" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-      <script type="text/javascript" id="snipcart" data-api-key="{SNIPCART API KEY}"></script>
+      <Wrapper>
+        <Helmet
+          title={title}
+          meta={[
+            {
+              name: 'description',
+              content: title,
+            },
+            ...meta,
+          ]}
+          link={link}
+          script={script}
+        >
+          <html lang="en" dir="ltr" />
+        </Helmet>
+        <Header title={data.site.siteMetadata.title} pathname={pathname} />
+        <Container id="content" role="main">
+          {children()}
+        </Container>
+        <Footer />
+        {/* <BottomBarContainer /> */}
+        <link id="snipcart-theme" type="text/css" href="https://cdn.snipcart.com/themes/base/snipcart.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" id="snipcart" data-api-key="{SNIPCART API KEY}"></script>
 
-    </Wrapper>
+      </Wrapper>
     </ThemeProvider>
 
   );
@@ -64,21 +64,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    products: allProducts {
-      edges {
-        node {
-          id
-          productTitle
-          productDescription
-          productImage {
-            id
-            handle
-            width
-            height
-          }
-        }
       }
     }
   }

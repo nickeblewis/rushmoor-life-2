@@ -42,31 +42,22 @@ module.exports = {
     {
       resolve: `gatsby-source-graphcms`,
       options: {
-        endpoint: `https://api.graphcms.com/simple/v1/headforcode`,
-        token: `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTExNjkyOTMsImNsaWVudElkIjoiY2l2Z29zNmNqMDE5MjAxODRucDAxZGRkMiIsInByb2plY3RJZCI6ImNqYTd5eWk0dzF3c2swMTQ0b3V4NzI0azIiLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqYTd6NmhxbDI3Y2cwMTcyajdocHB1cDIifQ.KRQblWZ-LN7o1PslV5nv-YymVHvIVcQcgBKOgjIipDA`,
+        endpoint: `https://api.graphcms.com/simple/v1/rushmoorlife`,
+        token: `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTY3OTM0NzIsImNsaWVudElkIjoiY2l2Z29zNmNqMDE5MjAxODRucDAxZGRkMiIsInByb2plY3RJZCI6ImNqY3N6ZjV4YjE3YXAwMTc5c2U4ZThtcXgiLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqY3N6bzYyYjB1dDQwMTIwcmhzZmNqeGUifQ.AqxkG8qdMMZWSva5YGUTaQ_Y0tiPzHDmoIJIJINV52U`,
         query: `{
             allBlogPosts {
               id
               postTitle
               postSlug
               postContent
-              postDateAndTime
+              postDate
               postImage {
                 id
+                fileName
+                handle
               }
               authors {
                 authorName
-              }
-            }
-            allProducts {
-              id
-              productTitle
-              productDescription
-              productImage {
-                id
-                handle
-                width
-                height
               }
             }
         }`,

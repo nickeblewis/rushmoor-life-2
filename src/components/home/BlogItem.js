@@ -6,22 +6,28 @@ import media from '../../css/media';
 
 const Wrapper = styled.div`
   display: flex;
-  padding-right: 2em;
+  padding: 2em;
+  margin-right: 2em;
   flex-direction: column;
   flex-basis: 50%;
+  background-color: ${props => props.theme.bulletin.backgrounds.wrapper};
 
   @media (${media.tablet}) {
     padding-right: 0;
     flex-basis: 100%;
+    margin-right: 0;
   }
 `;
 
 const Title = styled.h2`
-  color: #df3c3c;
-  border-bottom: #df3c3c 5px solid;
-  font-size: 37px;
+  color: ${props => props.theme.bulletin.colors.title};
+  background-color: ${props => props.theme.bulletin.backgrounds.wrapper};
+  // border-left: ${props => props.theme.bulletin.backgrounds.wrapper} 5px solid;
+  padding-left: 10px;
+  font-size: 26px;
   font-weight: bold;
   letter-spacing: -1px;
+  border-radius: 10px;
 
   @media (${media.tablet}) {
     margin-bottom: 0.5em;
@@ -29,10 +35,19 @@ const Title = styled.h2`
   }
 `;
 
+const PhotoItem = styled.p`
+// border-left: ${props => props.theme.bulletin.backgrounds.wrapper} 5px solid;
+padding: 10px;
+// border: black 3px solid;
+
+`;
+
 const SubTitle = styled.p`
-  color: #767676;
-  font-size: 20px;
+  color: ${props => props.theme.bulletin.colors.subTitle};
+  font-size: 18px;
   line-height: 1.6;
+  // border-left: ${props => props.theme.post.colors.primary} 5px solid;
+  padding-left: 10px;
   
   ${props => props.bold === true
     ? 'font-weight: normal; font-size: 28px'
@@ -59,21 +74,23 @@ padding-right:20px;
   font-size: 28px;
 }
 `;
-class IntroductionItem extends Component {
+class BlogItem extends Component {
   render() {
     const { title, subTitle, picture, bold, linkTo } = this.props;
     console.log("PIC=",picture)
     return (
       <Wrapper>
         <Title>{title}</Title>
+        <PhotoItem>
         { picture && 
           <img
-            src={`https://media.graphcms.com/resize=w:512,h:512,a:top,fit:scale/${picture}`}
+            src={`https://media.graphcms.com/resize=w:600,a:top,fit:scale/${picture}`}
             alt={title}
             title={title}
             width="256" 
           />
         }
+        </PhotoItem>
         <SubTitle bold={bold}>{subTitle}</SubTitle>
 
         {linkTo &&
@@ -87,4 +104,4 @@ class IntroductionItem extends Component {
   }
 }
 
-export default IntroductionItem;
+export default BlogItem;

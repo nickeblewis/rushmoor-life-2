@@ -68,27 +68,12 @@ export const pageQuery = graphql`
           postTitle
           postSlug
           postContent
-          postDateAndTime
+          postDate
           postImage {
             id
           }
           authors {
             authorName
-          }
-        }
-      }
-    }
-    products: allProducts {
-      edges {
-        node {
-          id
-          productTitle
-          productDescription
-          productImage {
-            id
-            handle
-            width
-            height
           }
         }
       }

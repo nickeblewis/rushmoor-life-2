@@ -32,8 +32,8 @@ class Nav extends Component {
             pathname={pathname}
           /> */ }
           <NavItem title="home" to="/" hasHover pathname={pathname} />
-          <NavItem title="blog" to="/blog" hasHover pathname={pathname} />
-          <NavItem title="contact" to="/contact" hasHover pathname={pathname} />
+          {/* <NavItem title="blog" to="/blog" hasHover pathname={pathname} /> */}
+          {/* <NavItem title="contact" to="/contact" hasHover pathname={pathname} /> */}
         </DesktopMenu>
         <MobileMenu {...this.props} />
       </Container>

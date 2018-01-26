@@ -1,147 +1,69 @@
-const path = require(`path`);
+const path = require('path');
+const _ = require('lodash');
 
-const { createFilePath } = require(`gatsby-source-filesystem`);
-
-// Parse date information out of blog post filename.
-const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
-
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+exports.onCreateNode = ({ node, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const { relativePath } = getNode(node.parent);
-    if (relativePath.includes('blog')) {
-      const match = BLOG_POST_FILENAME_REGEX.exec(relativePath);
-      const year = match[1];
-      const month = match[2];
-      const day = match[3];
-      const filename = match[4];
-
-      const slug = `/blog/${year}/${month}/${day}/${filename}/`;
-      const date = new Date(year, month - 1, day);
-
-      // Blog posts are sorted by date and display the date in their header.
-      createNodeField({
-        node,
-        name: 'date',
-        value: date.toJSON(),
-      });
-
-      createNodeField({
-        node,
-        name: 'slug',
-        value: slug,
-      });
-
-      createNodeField({
-        node,
-        name: 'path',
-        value: relativePath,
-      });
-    } else {
-      const slug = createFilePath({ node, getNode });
-      createNodeField({
-        node,
-        name: 'path',
-        value: relativePath,
-      });
-      createNodeField({
-        node,
-        name: 'slug',
-        value: slug,
-      });
+  let slug;
+  if (node.internal.type === 'MarkdownRemark') {
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
     }
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+    }
+    createNodeField({ node, name: 'slug', value: slug });
   }
 };
 
-exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage, createRedirect } = boundActionCreators;
-  const allMarkdown = await graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              layout
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  return new Promise((resolve, reject) => {
+    const postPage = path.resolve('src/templates/post.js');
+    resolve(graphql(`
+        {
+          posts: allMarkdownRemark {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
             }
           }
         }
+      `).then((result) => {
+      if (result.errors) {
+        /* eslint no-console: "off" */
+        console.log(result.errors);
+        reject(result.errors);
       }
-    }
-  `);
 
-  if (allMarkdown.errors) {
-    console.error(allMarkdown.errors);
-    throw Error(allMarkdown.errors);
-  }
+      const Posts = result.data.posts.edges;
 
-  allMarkdown.data.allMarkdownRemark.edges.map(({ node }) => {
-    const { slug } = node.fields;
-    let layout = node.frontmatter.layout;
+      Posts.forEach((edge, index) => {
+        const next = index === 0 ? false : Posts[index - 1].node;
+        const prev = index === Posts.length - 1 ? false : Posts[index + 1].node;
 
-    const slugWithoutSlash = slug.replace(/\/$/, ``);
-
-    if (layout === null || layout == 'post') {
-      layout = 'sidebar-layout'
-    }
-    else {
-      layout = 'sidebar-layout-with-products'
-    }
-
-    createPage({
-      path: slugWithoutSlash,
-      component: path.resolve('./src/templates/withSidebar.js'),
-      layout: layout,
-      context: {
-        // Data passed to context is available in page queries as GraphQL variables.
-        slug,
-        layout,
-      },
-    });
-    // Only redirect on doc pages to ensure the relative paths working
-    if (!slug.includes('blog')) {
-      createRedirect({
-        fromPath: slug,
-        redirectInBrowser: true,
-        toPath: slugWithoutSlash,
+        createPage({
+          path: edge.node.fields.slug,
+          component: postPage,
+          context: {
+            slug: edge.node.fields.slug,
+            prev,
+            next,
+          },
+        });
       });
-    }
-  });
-
-  const newestBlogEntry = await graphql(`
-    {
-      allMarkdownRemark(
-        limit: 1
-        filter: { id: { regex: "/blog/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              layout
-            }
-          }
-        }
-      }
-    }
-  `);
-  const newestBlogNode = newestBlogEntry.data.allMarkdownRemark.edges[0].node;
-  // Blog landing page should always show the most recent blog entry.
-  createRedirect({
-    fromPath: '/blog/',
-    redirectInBrowser: true,
-    toPath: newestBlogNode.fields.slug,
-  });
-
-  createRedirect({
-    fromPath: '/blog',
-    redirectInBrowser: true,
-    toPath: newestBlogNode.fields.slug,
+    }));
   });
 };

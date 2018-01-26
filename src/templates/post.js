@@ -225,23 +225,28 @@ export default ({ data, location }) => {
   );
 };
 
-export const query = graphql`
-  query BlogPostQuery($slug: String!) {
+export const pageQuery = graphql`
+  query ProjectPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
+        cover {
+          childImageSharp {
+            sizes(
+              maxWidth: 1600
+              quality: 90
+              traceSVG: { color: "#328bff" }
+            ) {
+              ...GatsbyImageSharpSizes_withWebp_tracedSVG
+            }
+            resize(width: 800) {
+              src
+            }
+          }
+        }
+        date
         title
-        date(formatString: "MMMM DD, YYYY")
-        author
-      }
-      fields {
-        path
-        slug
-      }
-    }
-    site {
-      siteMetadata {
-        title
+        areas
       }
     }
   }
