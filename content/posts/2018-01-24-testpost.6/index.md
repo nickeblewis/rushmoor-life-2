@@ -1,7 +1,7 @@
 ---
-cover: "./mona-magnussen.jpg"
+cover: "./NIC_9061.jpg"
 date: "2018-02-01"
-title: "Image 2"
+title: "Image 7"
 synopsis: "This is our synopsis"
 areas:
     - Photography

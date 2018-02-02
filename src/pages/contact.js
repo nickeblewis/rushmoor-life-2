@@ -24,9 +24,9 @@ const Wrapper = styled.div`
 class ContactPage extends Component {
 
   render() {
-    const posts = this.props.data.posts.edges;
+    // const posts = this.props.data.posts.edges;
     // const towns = this.props.data.towns.edges
-    const products = this.props.data.products.edges;
+    // const products = this.props.data.products.edges;
 
     return (
       <Wrapper>
@@ -59,24 +59,24 @@ class ContactPage extends Component {
 
 export default ContactPage;
 
-export const pageQuery = graphql`
-  query getContact {
-    posts: allBlogPosts {
-      edges {
-        node {
-          id
-          postTitle
-          postSlug
-          postContent
-          postDate
-          postImage {
-            id
-          }
-          authors {
-            authorName
-          }
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query getContact {
+//     posts: allBlogPosts {
+//       edges {
+//         node {
+//           id
+//           postTitle
+//           postSlug
+//           postContent
+//           postDate
+//           postImage {
+//             id
+//           }
+//           authors {
+//             authorName
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

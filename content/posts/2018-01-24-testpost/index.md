@@ -1,11 +1,11 @@
 ---
-cover: "./NIC_9061.jpg"
+cover: "./mona-magnussen.jpg"
 date: "2018-02-01"
-title: "Image 1"
+title: "Games Shop wins award for best Christmas Window Display"
 synopsis: "This is our synopsis"
 areas:
-    - Photography
-    - Art
+    - News
+    - Awards
 ---
 
 ![](./andrea-natali.jpg)

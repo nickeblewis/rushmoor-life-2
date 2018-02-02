@@ -4,13 +4,12 @@ import styled from 'styled-components';
 import { rhythm } from '../../utils/typography';
 import media from '../../css/media';
 import * as palette from '../../data/Style';
-// import BlockItem from '../../components/BlockItem';
 
 import {
     Link
 } from 'react-router'
-import BulletinItem from '../../components/BulletinItem';
 
+import BulletinItem from '../../components/BulletinItem';
 import Card from '../../components/Card';
 
 const Wrapper = styled.section`
@@ -74,18 +73,12 @@ background-color: #000;
 
 class NavJump extends React.Component {
 
-    // static propTypes = {
-    //     data: React.PropTypes.object,
-    // }
-
-    
-
     render() {
         const postEdges = this.props.postEdges;
-        console.log('introblock', this.props.data)
+        console.log('postEdges', postEdges)
         return (
             <Wrapper>
-                <Container>                   
+                <Container>
                     <Row>
                         <BulletinItem
                             bold={false}
@@ -129,54 +122,24 @@ class NavJump extends React.Component {
                         />
                     </Row>
                     <Content>
-                    <Grid>
-            {postEdges.map(post => (
-              <Card
-                date={post.node.frontmatter.date}
-                title={post.node.frontmatter.title}
-                cover={post.node.frontmatter.cover.childImageSharp.sizes}
-                path={post.node.fields.slug}
-                areas={post.node.frontmatter.areas}
-                slug={post.node.fields.slug}
-                key={post.node.fields.slug}
-              />
-            ))}
-            {/* {posts.map(project => ( */}
-            { /* 
-            <Card
-              date={project.node.postDate}
-              title={project.node.postTitle}
-              cover={project.node.postImage.handle}
-              path="http://www.headforcode.com"
-              slug={project.node.postSlug}
-              key={project.node.postSlug}
-            />
-            */ }
-
-            {/* ))} */}
-          </Grid>
-          </Content>
+                        <Grid>
+                            {postEdges.map(post => (
+                                <Card
+                                    date={post.node.frontmatter.date}
+                                    title={post.node.frontmatter.title}
+                                    cover={post.node.frontmatter.cover.childImageSharp.sizes}
+                                    path={post.node.fields.slug}
+                                    areas={post.node.frontmatter.areas}
+                                    slug={post.node.fields.slug}
+                                    key={post.node.fields.slug}
+                                />
+                            ))}
+                        </Grid>
+                    </Content>
                 </Container>
             </Wrapper>
 
         )
-    }
-
-    // Dan, If not logged in show the Register button, otherwise show the view all photos button
-    _renderButton() {
-        if (!this.props.data.user) {
-            return <Link className="f3 fw4 hover-red no-underline black-70 dib pv2 ph3 ba" to="/signup" >Register Now!</Link>
-        } else {
-            return <Link className="f3 fw4 hover-red no-underline black-70 dib pv2 ph3 ba" to="/Photo" >View all photos</Link>
-        }
-    }
-
-    _showText() {
-        if (!this.props.data.user) {
-            return <h3 className="f3">1. Sign-up</h3>
-        } else {
-            return <h3 className="f3">2. Add photos</h3>
-        }
     }
 }
 

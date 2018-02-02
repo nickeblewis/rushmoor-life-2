@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import logo from '../assets/logo4.jpg';
+// import logo from '../assets/logo4.jpg';
 import { rhythm } from '../utils/typography';
 import Nav from '../components/Nav';
 

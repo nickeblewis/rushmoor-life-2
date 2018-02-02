@@ -6,7 +6,7 @@ import baseStyles from '../css';
 import theme from "../styles/theme";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import BottomBarContainer from "../components/BottomBar/BottomBarContainer";
+// import BottomBarContainer from "../components/BottomBar/BottomBarContainer";
 
 import { link, meta, script } from './head';
 
@@ -23,7 +23,7 @@ const Container = styled.main`
 
 export default ({ children, data, location }) => {
   baseStyles();
-  const title = ` | HeadForCode | We Teach. We Consult. We Solve.`;
+  const title = ` | Rushmoor.Life | Your local guide`;
   const { pathname } = location;
 
   return (

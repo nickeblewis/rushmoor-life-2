@@ -40,30 +40,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-graphcms`,
-      options: {
-        endpoint: `https://api.graphcms.com/simple/v1/rushmoorlife`,
-        token: `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTY3OTM0NzIsImNsaWVudElkIjoiY2l2Z29zNmNqMDE5MjAxODRucDAxZGRkMiIsInByb2plY3RJZCI6ImNqY3N6ZjV4YjE3YXAwMTc5c2U4ZThtcXgiLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqY3N6bzYyYjB1dDQwMTIwcmhzZmNqeGUifQ.AqxkG8qdMMZWSva5YGUTaQ_Y0tiPzHDmoIJIJINV52U`,
-        query: `{
-            allBlogPosts {
-              id
-              postTitle
-              postSlug
-              postContent
-              postDate
-              postImage {
-                id
-                fileName
-                handle
-              }
-              authors {
-                authorName
-              }
-            }
-        }`,
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -77,7 +53,9 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 720,
+              maxWidth: 1600,
+              quality: 90,
+              linkImagesToOriginal: false,
             },
           },
         ],

@@ -9,7 +9,9 @@ import config from '../data/SiteConfig';
 import * as palette from '../data/Style';
 
 const CardItem = styled(Link)`
-    min-height: 200px;
+    min-height: 500px;
+    background-color: red;
+    min-width: 600px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.2);
@@ -50,6 +52,11 @@ const Cover = styled.div`
     div {
         overflow: hidden;
     }
+    opacity: 0.1;
+
+    ${CardItem}:hover & {
+        opacity: 1;
+    }
 `;
 
 const Header = styled.div`
@@ -60,7 +67,7 @@ const Header = styled.div`
     padding: 1rem;
     z-index: 10;
     transition: all .4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
-    opacity: 0;
+    opacity: 1;
 
     ${CardItem}:hover & {
         opacity: 1;
@@ -81,7 +88,7 @@ const Content = styled.div`
     padding: 1rem;
     position: relative;
     transition: all .4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
-    opacity: 0;
+    opacity: 1;
 
     ${CardItem}:hover & {
         opacity: 1;
@@ -104,6 +111,7 @@ const AreaItem = styled.span`
 const Name = styled.h2`
     margin-top: 1.25rem;
     margin-bottom: 0;
+    color: #fff;
 `;
 
 const Card = ({

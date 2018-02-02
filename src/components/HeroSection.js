@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // import logo from '../assets/logo.svg';
-import landscape from '../assets/NIC_0713.jpg';
+// import landscape from '../assets/NIC_0713.jpg';
 // import landscapeMobile from '../assets/NIC_0713.jpg';
 import media from '../css/media';
 
@@ -14,7 +14,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-//   background-image: url(${landscape});
+
   // background-color: #345678;
   background-color: ${props => props.theme.header.backgrounds.wrapper};
   background-position: center;
