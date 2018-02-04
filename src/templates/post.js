@@ -190,7 +190,7 @@ export default ({ data, location }) => {
 
   return (
     <Main id="content">
-      <Helmet title={`${title} | ${data.site.siteMetadata.title}`} />
+      <Helmet title={`${title} | Rushmoor.Life`} />
       <Container>
         <Left role="main">
           <TitleSection>
@@ -214,12 +214,12 @@ export default ({ data, location }) => {
   data-item-url={"http://snipcart-gatsby.netlify.com" + post.path}>
   Buy
 </a> */}
-          <EditThisPage pathname={post.fields.path} />
-          <Disqus postNode={post} />
+
+          {/* <Disqus postNode={post} /> */}
         </Left>
-        <Right>
+        {/* <Right>
           <Sidebar pathname={pathname} />
-        </Right>
+        </Right> */}
       </Container>
     </Main>
   );
