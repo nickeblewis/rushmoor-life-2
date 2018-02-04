@@ -17,7 +17,8 @@
     "lint:staged": "lint-staged",
     "precommit": "npm run lint:css && lint-staged",
     "reset": "rimraf ./.cache",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "start": "serve public/"
   },
   "dependencies": {
     "gatsby": "^1.9.82",
@@ -49,6 +50,7 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
+    "serve": "^6.4.9",
     "styled-components": "^2.2.1",
     "styled-normalize": "^2.2.1",
     "typography": "^0.16.6",
