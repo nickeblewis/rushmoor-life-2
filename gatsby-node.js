@@ -44,7 +44,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       `).then((result) => {
       if (result.errors) {
         /* eslint no-console: "off" */
-        console.log(result.errors);
+        // console.log(result.errors);
         reject(result.errors);
       }
 
