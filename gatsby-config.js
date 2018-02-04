@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/rushmoor-life-2",
   siteMetadata: {
     title: 'HeadForCode',
     siteUrl: 'https://headforcode.com',
