@@ -9,9 +9,10 @@ import config from '../data/SiteConfig';
 import * as palette from '../data/Style';
 
 const CardItem = styled(Link)`
-    min-height: 500px;
+    min-height: 250px;
     background-color: red;
-    min-width: 600px;
+    background-color: ${props => props.theme.bulletin.backgrounds.wrapper};
+    // min-width: 600px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.2);
@@ -52,7 +53,7 @@ const Cover = styled.div`
     div {
         overflow: hidden;
     }
-    opacity: 0.1;
+    opacity: 0.2;
 
     ${CardItem}:hover & {
         opacity: 1;
