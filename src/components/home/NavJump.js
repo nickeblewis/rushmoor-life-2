@@ -79,7 +79,7 @@ class NavJump extends React.Component {
         return (
             <Wrapper>
                 <Container>
-                    <Row>
+                    {/* <Row>
                         <BulletinItem
                             bold={false}
                             picture="Mayor_with_The_Games_Shop_jo6dar.jpg"
@@ -120,7 +120,7 @@ class NavJump extends React.Component {
                             title="Free Festive FairTrade Food and Film Festival"
                             subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus, tellus dictum pretium tincidunt, augue odio ultricies mi, vel malesuada eros ex sed augue. Pellentesque mauris arcu, consequat in congue."
                         />
-                    </Row>
+                    </Row> */}
                     <Content>
                         <Grid>
                             {postEdges.map(post => (
