@@ -1,6 +1,6 @@
 ---
-cover: "./mona-magnussen.jpg"
-date: "2018-02-01"
+cover: "./Mayor_with_The_Games_Shop_jo6dar.jpg"
+date: "2018-01-24"
 title: "Games Shop wins award for best Christmas Window Display"
 synopsis: "This is our synopsis"
 areas:
@@ -8,5 +8,6 @@ areas:
     - Awards
 ---
 
-![](./andrea-natali.jpg)
-![](./kari-shea.jpg)
+## Hello mate
+
+Test
