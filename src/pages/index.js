@@ -30,7 +30,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
       edges {
         node {
           fields {
