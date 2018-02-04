@@ -22,6 +22,6 @@ export const MAX_WIDTH = '1600';
 // your maxWidth for gatsby-remark-images in gatsby-config.js MUST have the same width!
 export const MAX_WIDTH_PROJECT_DETAIL = 1600;
 
-export const GRID_COLUMNS = '2';
+export const GRID_COLUMNS = '3';
 
 export const CONTENT_PADDING = '1.0875rem';
