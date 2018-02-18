@@ -12,7 +12,7 @@ const CardItem = styled(Link)`
     min-height: 250px;
     background-color: red;
     background-color: ${props => props.theme.bulletin.backgrounds.wrapper};
-    // min-width: 600px;
+    min-width: 250px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.2);
