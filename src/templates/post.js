@@ -10,6 +10,10 @@ import EditThisPage from '../components/EditThisPage';
 import Sidebar from '../components/Sidebar';
 import authors from '../../content/authors.yaml';
 import Disqus from "../components/Disqus/Disqus";
+import HeroSection from '../components/HeroSection';
+import IntroBlock from '../components/home/IntroBlock';
+import NavJump from '../components/home/NavJump';
+import ContentBlock from '../components/post/ContentBlock';
 
 const globalStyle = `
   h1 {
@@ -87,6 +91,12 @@ const globalStyle = `
   }
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+`;
+
 const Main = styled.div`
   display: flex;
   justify-content: center;
@@ -96,6 +106,7 @@ const Main = styled.div`
   background-size: 25% 100%;
   opacity: 1;
   transition: opacity 0.5s;
+  width: 100%;
 
   @media (${media.desktop}) {
     background-size: 25% 100%;
@@ -191,36 +202,14 @@ export default ({ data, location }) => {
   return (
     <Main id="content">
       <Helmet title={`${title} | Rushmoor.Life`} />
-      <Container>
-        <Left role="main">
-          <TitleSection>
-            <Title>{title}</Title>
-            {author && (
-              <Meta>
-                {`${date} by `}
-                {toCommaSeparatedList(author, renderAuthor)}
-              </Meta>
-            )}
-          </TitleSection>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          {/* <a
-  href='#'
-  className='snipcart-add-item'
-  data-item-id={post.id}
-  data-item-price={post.price}
-  data-item-image={post.image}
-  data-item-name={post.title}
-  data-item-description={post.description}
-  data-item-url={"http://snipcart-gatsby.netlify.com" + post.path}>
-  Buy
-</a> */}
+      <Wrapper>
+       
+        <HeroSection title={title} slogan={description} />
+        <IntroBlock />
 
-          {/* <Disqus postNode={post} /> */}
-        </Left>
-        {/* <Right>
-          <Sidebar pathname={pathname} />
-        </Right> */}
-      </Container>
+
+      
+      </Wrapper>
     </Main>
   );
 };
@@ -246,6 +235,7 @@ export const pageQuery = graphql`
         }
         date
         title
+        description
         areas
       }
     }

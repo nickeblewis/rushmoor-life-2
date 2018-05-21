@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 
 import HeroSection from '../components/HeroSection';
+import SectionTitle from '../components/SectionTitle';
 import IntroBlock from '../components/home/IntroBlock';
 import NavJump from '../components/home/NavJump';
 
@@ -19,8 +20,13 @@ class IndexPage extends Component {
     return (
       <Wrapper>
         <HeroSection title="Rushmoor.Life" slogan="Farnborough / North Camp / Aldershot" />
-        <IntroBlock />
+        <SectionTitle title="Local Business & Organisations" slogan="We showcase our finest businesses and organisations 24-7!"></SectionTitle>
         <NavJump postEdges={postEdges} />
+        <SectionTitle title="Latest Events" slogan="A bit of everything, from craft fayres to stage shows and festivals!"></SectionTitle>
+        <NavJump postEdges={postEdges} />
+        <SectionTitle title="Latest News" slogan="What is happening across the Borough"></SectionTitle>
+        <NavJump postEdges={postEdges} />
+        <IntroBlock />
       </Wrapper>
     );
   }

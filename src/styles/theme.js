@@ -7,7 +7,8 @@ const theme = {
       slogan: colors.light
     },
     backgrounds: {
-      wrapper: colors.primary
+      wrapper: colors.primary,
+      sectionTitle: colors.superDark
     }
   },
   intro: {
@@ -44,6 +45,7 @@ const theme = {
     },
     backgrounds: {
       wrapper: colors.first,
+      sectionTitle: colors.superDark,
       asideItemActive: colors.firstDark
     }
   },
@@ -66,6 +68,7 @@ const theme = {
     },
     backgrounds: {
       wrapper: colors.bright,
+      sectionTitle: colors.superDark,
       meta: colors.light
     },
     sizes: {

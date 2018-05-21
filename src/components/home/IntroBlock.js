@@ -58,7 +58,7 @@ class IntroBlock extends React.Component {
                         <BlockItem
                             bold={false}
                             title="Business"
-                            subTitle="Business listings cost just £100 per year and bring many benefits such as automated promotion via social media each time you submit a 'bulletin'."
+                            subTitle="Business profiles cost just £500 per year and bring many benefits such as automated promotion via social media each time you submit a 'bulletin'."
                         />
                         <BlockItem
                             bold={false}
