@@ -4,6 +4,7 @@ import styled from 'styled-components';
 // import logo from '../assets/logo.svg';
 // import landscape from '../assets/NIC_0713.jpg';
 // import landscapeMobile from '../assets/NIC_0713.jpg';
+
 import media from '../css/media';
 
 
@@ -20,7 +21,7 @@ const Wrapper = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-
+  background-image: url(${props => props.backgroundImage});
   @media (${media.tablet}) {
     height: 68vw;
     
@@ -50,7 +51,7 @@ const Title = styled.h1`
 `;
 
 const Slogan = styled.h2`
-  margin: 0 1vw 4vw;
+  // margin: 0 1vw 4vw;
   color: ${props => props.theme.header.colors.slogan};
   font-family: SFUIDisplay;
   font-size: 22px;
@@ -74,7 +75,7 @@ const Slogan = styled.h2`
 
 class HeroSection extends Component {
   render() {
-    const { title, slogan } = this.props;
+    const { title, slogan, backgroundImage } = this.props;
     return (
       <Wrapper>
         <Title>{title}</Title>

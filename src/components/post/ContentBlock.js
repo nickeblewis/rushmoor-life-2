@@ -17,7 +17,7 @@ const Wrapper = styled.section`
   height: auto;
   padding: 50px 0;
   justify-content: center;
-  background-color: #000;
+  background-color: #fff;
 
   @media (${media.tablet}) {
     padding: 20px 0;
@@ -59,29 +59,75 @@ const Grid = styled.div`
   }
 `;
 
-const Content = styled.div`
-display: flex;
-height: auto;
-padding: 50px 0;
-justify-content: center;
-background-color: #000;
+const Heading = styled.h1`
+  margin: 0;
+  color: #000;
+  font-family: BebasNeue;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 8.2px;
 
-@media (${media.tablet}) {
-  padding: 20px 0;
-}
+  @media (${media.giant}) {
+    font-size: ${81 * 0.8}px;
+  }
+
+  @media (${media.desktop}) {
+    font-size: ${81 * 0.6}px;
+  }
+
+  @media (${media.tablet}) {
+    font-size: 12vw;
+  
+  }
+`;
+
+const SubHeading = styled.p`
+  color: #000;
+  font-family: SFUIDisplay;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 300;
+  // letter-spacing: 3.5px;
+
+  @media (${media.giant}) {
+    font-size: ${22 * 0.8}px;
+  }
+
+  @media (${media.desktop}) {
+    font-size: ${22 * 0.6}px;
+  }
+
+  @media (${media.tablet}) {
+    font-size: 6vw;
+    background: white;
+  }
+`;
+const Content = styled.div`
+  display: flex;
+  height: auto;
+  text-align: left;
+  justify-content: left;
+  background-color: #fff;
+  color: #666;
+
+  @media (${media.tablet}) {
+    padding: 20px 0;
+  }
 `;
 
 class ContentBlock extends React.Component {
 
     render() {
-        const postEdges = this.props.postEdges;
-        console.log('postEdges', postEdges)
+        const { title, description, html } = this.props;
+        
         return (
             <Wrapper>
                 <Container>
               
+                    <Heading>{title}</Heading>
+                    <SubHeading>{description}</SubHeading>
                     <Content>
-                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                      <div dangerouslySetInnerHTML={{ __html: html }} />
                     </Content>
                 </Container>
             </Wrapper>

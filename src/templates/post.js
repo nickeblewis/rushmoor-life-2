@@ -204,10 +204,10 @@ export default ({ data, location }) => {
       <Helmet title={`${title} | Rushmoor.Life`} />
       <Wrapper>
        
-        <HeroSection title={title} slogan={description} />
+        {/* <HeroSection title={title} slogan={description} /> */}
+
+        <ContentBlock title={title} description={description} html={post.html} />
         <IntroBlock />
-
-
       
       </Wrapper>
     </Main>

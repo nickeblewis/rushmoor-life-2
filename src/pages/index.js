@@ -6,6 +6,7 @@ import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
 import IntroBlock from '../components/home/IntroBlock';
 import NavJump from '../components/home/NavJump';
+import backgroundImage from '../assets/iStock-478834094-cropped.jpg'
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ class IndexPage extends Component {
   
     return (
       <Wrapper>
-        <HeroSection title="Rushmoor.Life" slogan="Farnborough / North Camp / Aldershot" />
+        <HeroSection title="Rushmoor.Life" slogan="Farnborough / North Camp / Aldershot" backgroundImage={backgroundImage} />
         <SectionTitle title="Local Business & Organisations" slogan="We showcase our finest businesses and organisations 24-7!"></SectionTitle>
         <NavJump postEdges={postEdges} />
         <SectionTitle title="Latest Events" slogan="A bit of everything, from craft fayres to stage shows and festivals!"></SectionTitle>
