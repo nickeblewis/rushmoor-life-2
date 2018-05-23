@@ -28,4 +28,6 @@ Councillor Martin Tennant, Rushmoor Borough Council’s Cabinet member for Envir
  
 > “We would love to have them on board as community champions because residents are the ones that know their neighbourhoods best and the ‘hot spots’ that need tackling.”
  
-Rob Noble, Contract Manger, Serco, said: “The community champions scheme will provide volunteers across Rushmoor the tools, training and support to report issues that matter most to them, keeping the borough clean and reducing enviro crime, such as fly-tipping. Serco are proud to be delivering this exciting community initiative and are really looking forward to working with our local champions soon.” 
+Rob Noble, Contract Manger, Serco, said: 
+
+> “The community champions scheme will provide volunteers across Rushmoor the tools, training and support to report issues that matter most to them, keeping the borough clean and reducing enviro crime, such as fly-tipping. Serco are proud to be delivering this exciting community initiative and are really looking forward to working with our local champions soon.” 
