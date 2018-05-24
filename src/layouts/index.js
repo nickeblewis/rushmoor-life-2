@@ -23,7 +23,7 @@ const Container = styled.main`
 
 export default ({ children, data, location }) => {
   baseStyles();
-  const title = ` | Rushmoor.Life | Your local guide`;
+  const title = ` | Farnborough Guide | Your local guide`;
   const { pathname } = location;
 
   return (

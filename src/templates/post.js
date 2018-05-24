@@ -14,6 +14,8 @@ import HeroSection from '../components/HeroSection';
 import IntroBlock from '../components/home/IntroBlock';
 import NavJump from '../components/home/NavJump';
 import ContentBlock from '../components/post/ContentBlock';
+import backgroundImage from '../assets/iStock-478834094-cropped.jpg'
+import SectionTitle from '../components/SectionTitle';
 
 const globalStyle = `
   h1 {
@@ -201,10 +203,12 @@ export default ({ data, location }) => {
 
   return (
     <Main id="content">
-      <Helmet title={`${title} | Rushmoor.Life`} />
+      <Helmet title={`${title} | Farnborough Guide`} />
       <Wrapper>
        
         {/* <HeroSection title={title} slogan={description} /> */}
+        <HeroSection title={"Farnborough Guide"} slogan="Events / News / Business / What to do?" backgroundImage={backgroundImage} />
+        {/* <SectionTitle title={title} slogan={description}></SectionTitle> */}
 
         <ContentBlock title={title} description={description} html={post.html} />
         <IntroBlock />

@@ -8,10 +8,6 @@ areas:
     - Community
 ---
 
-![](champions.jpg)
-
-Rushmoor Borough Council is launching a brand new pilot scheme for residents who love where they live and want to become new community champions!
- 
 Working with contractors Serco, the council is setting up a brand new scheme for up to 20 residents who are keen to make a real difference to their community. Five of those selected will join a pilot scheme in the early part of the summer with the remainder joining later in the year.
  
 The community champions will work voluntarily as an extra pair of eyes and ears on the ground to report environmental problems such as littering, graffiti, fly tipping, abandoned vehicles and dog fouling. The scheme will run throughout the summer and each volunteer will be given a smart phone with the Love Rushmoor mobile app loaded to report any issues they spot. It is free for community champions to take part and all costs of the scheme will be borne by Serco.
@@ -31,3 +27,7 @@ Councillor Martin Tennant, Rushmoor Borough Council’s Cabinet member for Envir
 Rob Noble, Contract Manger, Serco, said: 
 
 > “The community champions scheme will provide volunteers across Rushmoor the tools, training and support to report issues that matter most to them, keeping the borough clean and reducing enviro crime, such as fly-tipping. Serco are proud to be delivering this exciting community initiative and are really looking forward to working with our local champions soon.” 
+
+![](champions.jpg)
+_Councillor Martin Tennant, Rushmoor Borough Council’s Cabinet member for Environment and Service Delivery, watches as a fly-tip is reported._
+

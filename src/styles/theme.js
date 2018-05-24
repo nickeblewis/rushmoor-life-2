@@ -61,6 +61,7 @@ const theme = {
       meta: colors.middle,
       metaBorder: colors.first,
       text: colors.dark,
+      offWhiteYellowText: colors.offWhiteYellow,
       title: colors.middle,
       subTitle: colors.superDark,
       primary: colors.primary,

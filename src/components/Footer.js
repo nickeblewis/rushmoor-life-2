@@ -72,10 +72,10 @@ class Footer extends Component {
       <Wrapper id="footer" role="contentinfo">
         <Container>
           <Copyright>
-            © 2018 - Rushmoor.Life
+            © 2018 - Farnborough Guide
           </Copyright>
           <MobileCopyright>
-            © 2018 - Rushmoor.Life
+            © 2018 - Farnborough Guide
           </MobileCopyright>
           {/* <Link href="https://github.com/nickeblewis" target="_blank">
             <GitHubLogo src={github} alt="Headforcode github link" />

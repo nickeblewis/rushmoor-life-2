@@ -33,7 +33,7 @@ const Title = styled.h2`
 `;
 
 const SubTitle = styled.p`
-  color: ${props => props.theme.post.colors.text};
+  color: ${props => props.theme.post.colors.offWhiteYellowText};
   font-size: 20px;
   line-height: 1.6;
 //   border: ${props => props.theme.post.colors.primary} 5px solid;

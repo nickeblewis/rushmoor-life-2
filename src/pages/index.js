@@ -20,7 +20,7 @@ class IndexPage extends Component {
   
     return (
       <Wrapper>
-        <HeroSection title="Rushmoor.Life" slogan="Farnborough / North Camp / Aldershot" backgroundImage={backgroundImage} />
+        <HeroSection title="Farnborough Guide" slogan="Events / News / Business / What to do?" backgroundImage={backgroundImage} />
         <SectionTitle title="Local Business & Organisations" slogan="We showcase our finest businesses and organisations 24-7!"></SectionTitle>
         <NavJump postEdges={postEdges} />
         <SectionTitle title="Latest Events" slogan="A bit of everything, from craft fayres to stage shows and festivals!"></SectionTitle>
