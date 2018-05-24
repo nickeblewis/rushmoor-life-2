@@ -69,7 +69,6 @@ const Slogan = styled.h2`
 
   @media (${media.tablet}) {
     font-size: 3vw;
-    background: black;
   }
 `;
 

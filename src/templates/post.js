@@ -197,7 +197,7 @@ const renderAuthor = author => {
 
 export default ({ data, location }) => {
   const post = data.markdownRemark;
-  const { title, author, date, id, price, image, description, path } = post.frontmatter;
+  const { title, eventDate, author, date, id, price, image, description, path } = post.frontmatter;
   const { pathname } = location;
   const disqusShortname = 'headforcode'
 
@@ -210,7 +210,12 @@ export default ({ data, location }) => {
         <HeroSection title={"Farnborough Guide"} slogan="Events / News / Business / What to do?" backgroundImage={backgroundImage} />
         {/* <SectionTitle title={title} slogan={description}></SectionTitle> */}
 
-        <ContentBlock title={title} description={description} html={post.html} />
+        <ContentBlock 
+          title={title} 
+          description={description} 
+          html={post.html} 
+          eventDate={eventDate}
+        />
         <IntroBlock />
       
       </Wrapper>
@@ -238,6 +243,7 @@ export const pageQuery = graphql`
           }
         }
         date
+        eventDate
         title
         description
         areas
