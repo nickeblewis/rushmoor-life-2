@@ -68,7 +68,7 @@ const Slogan = styled.h2`
   }
 
   @media (${media.tablet}) {
-    font-size: 3vw;
+    font-size: 4vw;
   }
 `;
 
